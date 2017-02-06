@@ -29,7 +29,7 @@ module MandrillMailer
     def deliver
       deliver_now
     end
-    
+
     def deliver_now
       MandrillMailer::Mock.new({
         :template_name    => template_name,
@@ -42,7 +42,7 @@ module MandrillMailer
          MandrillMailer.deliveries << mock
       end
     end
-    def deliver_later
+    def deliver_later(params={})
       MandrillMailer::Mock.new({
         :template_name    => template_name,
         :template_content => template_content,
